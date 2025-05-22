@@ -9,9 +9,7 @@ It includes basic syntax, data structures, algorithms, OOP concepts, and small p
 
 ## Folder Structure
 
-
-
-
+```
 C++-Study/
 ├── basics/ # C++ 기본 문법 학습
 ├── oop/ # 클래스, 상속, 다형성 구현
@@ -19,9 +17,7 @@ C++-Study/
 ├── algorithms/ # 정렬, 탐색 등 알고리즘 연습
 ├── codingtest/ # 코딩 테스트 문제 풀이
 └── README.md
-
-
-
+```
 
 ### Tools & environment
 - Language: C++
