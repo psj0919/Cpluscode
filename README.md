@@ -6,6 +6,7 @@ It includes basic syntax, data structures, algorithms, OOP concepts, and small p
 - Learn C++ basic syntax and structure.
 - Understand pointers, references, and memory management.
 - Implement OOP: class, inheritance, polymorphism.
+- Implement Codingtest by C++
 
 ## Folder Structure
 
@@ -26,10 +27,10 @@ C++-Study/
 
 
 ## Progress
- -[] 
- -[]
+- [] 기본 문법 정리
+- [] 
 
 
 ## References
--[Mac use Vscode C++] (https://songacoding.tistory.com/49)
--[Use study book] (열혈 C++ 프로그래밍 by 윤성우)
+- [Mac use Vscode C++] (https://songacoding.tistory.com/49)
+- [Use study book] (열혈 C++ 프로그래밍 by 윤성우)
