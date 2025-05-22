@@ -2,9 +2,6 @@
 This repository contains my journey of learning and practicing C++.  
 It includes basic syntax, data structures, algorithms, OOP concepts, and small projects.
 
-
-
-
 ## Goals
 - Learn C++ basic syntax and structure.
 - Understand pointers, references, and memory management.
@@ -27,8 +24,8 @@ It includes basic syntax, data structures, algorithms, OOP concepts, and small p
 
 
 ## Progress
--[]
--[]
+ -[] 
+ -[]
 
 
 ## References
