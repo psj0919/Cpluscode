@@ -65,6 +65,7 @@ int main()
 int main()
 {
     int num;
+    
 
 
     while (1)
