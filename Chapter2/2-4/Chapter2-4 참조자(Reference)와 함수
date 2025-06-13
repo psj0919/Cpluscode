@@ -1,0 +1,99 @@
+# Call-by-value & Call-by-reference
+- Call-by-value: 값을 인자로 전달하는 함수의 호출방식.
+- Call-by-reference: 조수 값을 인자로 전달하는 함수의 호출.
+
+- ex) Call-by-value
+int Adder (int num1, int num2)
+{
+    return num1 + num2;
+}
+- 두 개의 정수를 인자로 요구.
+void Swap(int num1, int num2)
+{
+    int temp = num1;
+    num1 = num2;
+    num2 = num1;
+}
+int main()
+{
+    int val1 = 10;
+    int val2 = 20;
+    Swap(val1, val2);
+    cout << val1<<endl;   // 10출력
+    cout << val2<<endl;   // 20출력
+    return 0;
+}
+--> 다음 예제와 같이 val1과 val2에 저장된 값이 서로 바뀌지 않음을 의미. 값을 변경하고 싶을 때 사용하는 것이 call-by-reference.
+
+- ex) Call-by-reference
+void Swap(int * ptr1, int * ptr2)
+{
+    int temp = *ptr1;
+    *ptr1 = *ptr2;
+    *ptr2 = temp;
+    // Call-by-reference
+}
+int main()
+{
+    int val1 = 10;
+    int val2 = 20;
+    Swap(val1, val2);
+    cout << val1<<endl;   // 20출력
+    cout << val2<<endl;   // 10출력
+    return 0;
+}
+
+# Call-by-address? Call-by-reference
+
+- 주소 값을 전달하는 call-byt-reference 형태의 함수호출이 Call-by-address라 불리는 경우가 있음.
+-> 주소 값을 전달하는 함수의 호출형태를 가리켜 Call-by-reference라 표현함.
+
+- Call-by-reference 정의
+-> 주소 값을 전달받아서, 함수 외부에 선언된 변수에 접근하는 형태의 함수호출. 즉, 주소 값이 외부 변수의 참조도구로 사용되는 함수의 호출을 뜻함.
+
+# 참조자를 이용한 Call-by-reference
+
+- Call-by-reference의 가장 큰 핵심은 함수 내에서 함수외부에 선언된 변수에 접근할 수 있다는 것.
+
+ex)
+void Swap(int & ref1, int $ref2)
+{
+    int temp = ref1;
+    ref1 = ref2;
+    refg2 = temp;
+    // Call-by-reference
+}
+- 매개변수로 선언된 참조자 ref1과 ref2는 main 함수에서 선언된 변수 val1과 val2의 또 다른 이름이 된다. 그리고 Swap 함수 내에서는 이 두 참조자를 통해서 값을 교환과정을 거치기 때문에 실제로 val1과 val2의 값의 교환으로 이어진다.
+
+# 참조자를 이용한 Call-by-reference의 황당함과 const 참조자
+- 포인터는 잘못 사용할 확률이 높고, 참조자의 활용이 상대적으로 포인터의 활용보다 쉽기 때문에, 참조자 기반의 함수정의가 더 좋은 선택.
+
+ex)
+int num = 24;
+Func(num);
+cout << num << endl;
+- C언어의 관점에서는 100% 24가 출력되지만, C++에서는 얼마가 출력될지 알 수 없음.
+
+void Func(int prm){ } -> 다음과 같이 정의되어 있으면 24가 출력됨.
+void Func (int & prm){ } ->  다음과 같이 정의되어 있다면, 참조자를 이용해서 num에 저장된 값을 변경할 수도 있다.
+
+다음과 같은 이유가 참조자의 단점이 될 수 있음. 그리하여 이러한 문제를 해결하기 위해 const를 사용함.
+void Func(const int & ref){ } -> 다음과 같이 const를 사용하게 되면 함수 Fucn 내에서 참조자 ref를 이용한 값의 변경을 하지 않겠다는 것을 의미.
+
+# 반환형이 참조형인 경우
+
+int& Ref(int &ref)
+{
+    ref++;
+    return ref
+}
+- 위의 함수에서는 매개변수로 참조자가 선언되었느데, 이 참조자를 그대로 봔환하고 있다.
+-> 매개변수가 참조자인데 이를 반환하니까 반환형이 참조형인 것 (잘못된 판단)
+
+# const 참조자의 또 다른 특징
+const int num=20
+int &ref = num;
+ref += 10;
+-const 선언을 통해서 변수 num을 상수화했는데 참조자 ref를 통해서 값을 변경하는 것은 사실상 변수 num의 상수화가 의미가 없다.
+-상수화 되었다는 것은 어떠한 경로를 통하더라도 값의 변경을 허용하면 안 된다.
+
