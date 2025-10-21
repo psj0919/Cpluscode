@@ -19,7 +19,6 @@ public:
         return pos;
     }
     friend Point& operator~ (Point & ref)
-
 };
 
 Point & operator~ (Point & ref)
