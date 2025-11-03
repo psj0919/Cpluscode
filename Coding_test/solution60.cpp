@@ -9,8 +9,13 @@ string solution(string my_string)
     string answer = "";
     for(int i=0; i<my_string.size(); i++)
     {
-        cout << my_string.find(my_string[i]) << endl;
+        if (answer.find(my_string[i]) == string::npos)
+        {
+            answer += my_string[i];
+        }
     }
+
+    cout << answer << endl;
     return answer;
 }
 
