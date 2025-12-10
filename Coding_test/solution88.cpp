@@ -6,11 +6,23 @@ using namespace std;
 int solution(string A, string B) 
 {
     int answer = 0;
-    string s = "";
-    char tmp;
-    for(int i=0; i<A.size(); i++)
+    int count = 0;
+    if(A == B)
     {
-        
+        return answer = 0;
     }
-    return answer;
+    while(count != A.size())
+    {
+        count++;
+        for(int i=A.size(); i > -1; i--)
+        {
+            A[i] = A[i-1];
+        }
+        if(A == B)
+        {
+            return answer = 1;
+        }
+    }
+
+    return answer = -1;
 }
