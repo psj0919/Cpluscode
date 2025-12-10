@@ -11,18 +11,21 @@ int solution(string A, string B)
     {
         return answer = 0;
     }
-    while(count != A.size())
+    while(count < A.size())
     {
         count++;
-        for(int i=A.size(); i > -1; i--)
+        char last = A.back();
+        for(int i = (int)A.size()-1; i>0; i--)
         {
             A[i] = A[i-1];
         }
-        if(A == B)
+        A[0] = last;
+        if(A==B)
         {
-            return answer = 1;
+            return count;
         }
     }
-
-    return answer = -1;
+    
+    return -1;
+    
 }
